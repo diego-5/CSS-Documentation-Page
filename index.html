@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Documentation</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+</head>
+<body>
+<nav id="navbar"> <!--User story #8; user story #14 regular sized devices -->
+    <header>CSS Documentation</header><!--user story #9, #11-->
+    <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <!--user story #10, #13; need 1 for each section-->
+        <li><a class="nav-link" href="#Anatomy_of_CSS_Ruleset">Anatomy of CSS Ruleset</a></li>
+        <li><a class="nav-link" href="#Selecting_multiple_elements">Selecting multiple elements</a></li>
+        <li><a class="nav-link" href="#Different_types_of_selectors">Different types of selectors</a></li>
+        <li><a class="nav-link" href="#Fonts_and_texts">Fonts and texts</a></li>
+    </ul>
+</nav>
+<main id="main-doc"> <!--user story #1-->
+    <section id="Introduction" class="main-section"><!--user story #4; section 1-->
+        <!--user story #2; needs 5 sections with same class applied-->
+        <header>Introduction</header>
+
+        <!--user story #5; need 10 total-->
+        <p>Like HTML, CSS is not a programming language. It's not a markup language either. CSS is a style sheet
+            language. CSS is what you use to selectively style HTML elements. For example, this CSS selects paragraph
+            text, setting the color to red:
+        </p> <!-- 10 total, p:1-->
+        <code> {
+            color: red;
+            }</code><!--user story #6; need 5 total-->
+        <p>Let's try it out! Using a text editor, paste the three lines of CSS (above) into a new file. Save the file as
+            style.css in a directory named styles.
+
+            To make the code work, we still need to apply this CSS (above) to your HTML document. Otherwise, the styling
+            won't change the appearance of the HTML. (If you haven't been following our project, pause here to read
+            Dealing with files and HTML basics.)
+
+        </p>
+        <ol>
+
+
+            <li>Open your index.html file. Paste the following line in the head (between the &lt head> and &lt/head>
+                tags):
+            </li>
+            <code>&lt link href="styles/style.css" rel="stylesheet"></code>
+            <li>Save index.html and load it in your browser. You should see something like this:</li>
+            <img src="images/screenshot.png" alt="html document loaded">
+        </ol> <!--user story #7; need 5 total-->
+    </section>
+    <section id="Anatomy_of_CSS_Ruleset" class="main-section"> <!--section 2-->
+        <header>Anatomy of CSS Ruleset</header>
+        <p>
+            <img src="images/AnatomyCSS.png" alt="Anatomy of CSS Picture">
+        </p>
+        <h2>
+            Selector
+        </h2>
+        <p>
+            This is the HTML element name at the start of the ruleset. It defines the element(s) to be styled (in this
+            example, &lt p &gt elements). To style a different element, change the selector.
+        </p>
+        <h2>
+            Declaration
+        </h2>
+        <p>
+            This is a single rule like <code>color: red;</code>. It specifies which of the element's properties you want
+            to style.
+        </p>
+        <h2>
+            Properties
+        </h2>
+        <p>
+            These are ways in which you can style an HTML element. (In this example, <code> color</code> is a property
+            of the &lt p &gt elements.) In CSS, you choose which properties you want to affect in the rule.
+        </p>
+        <h2>
+            Property value
+        </h2>
+        <p>
+            To the right of the property—after the colon—there is the property value. This chooses one out of many
+            possible appearances for a given property. (For example, there are many <code>color</code> values in
+            addition to <code> red</code>.)
+        </p>
+        <p>
+            Note the other important parts of the syntax:
+        </p>
+        <ul>
+            <li>Apart from the selector, each ruleset must be wrapped in curly braces. ({})</li>
+            <li>Within each declaration, you must use a colon (:) to separate the property from its value or values.
+            </li>
+            <li>Within each ruleset, you must use a semicolon (;) to separate each declaration from the next one.</li>
+        </ul>
+
+    </section>
+    <section id="Selecting_multiple_elements" class="main-section">
+        <header>Selecting multiple elements</header>
+        <p>
+            You can also select multiple elements and apply a single ruleset to all of them. Separate multiple selectors
+            by commas. For example:
+        </p>
+        <code>
+            p, li, h1 {
+            color: red;
+            }
+        </code>
+
+
+    </section><!-- section 3-->
+    <section id="Different_types_of_selectors" class="main-section">
+        <header>Different types of selectors</header>
+        <p>
+            There are many different types of selectors. The examples above use element selectors, which select all
+            elements of a given type. But we can make more specific selections as well. Here are some of the more common
+            types of selectors:
+
+        </p>
+        <img src="images/csstable.png" alt="table of Different type of selectors">
+        <p>
+            There are many more selectors to discover. To learn more, see the MDN <a
+                href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors">Selectors
+            guide</a>
+        </p>
+    </section>
+    <section id="Fonts_and_texts" class="main-section">
+        <header>Fonts and texts</header>
+        <p>
+            Now that we've explored some CSS fundamentals, let's improve the appearance of the example by adding more
+            rules and information to the style.css fil
+        </p>
+        <ol>
+            <li>First, find the output from Google Fonts that you previously saved from What will your website look
+                like?. Add the link element somewhere inside your index.html's head (anywhere between the head and /head
+                tags). It looks something like this:
+                <br>
+                <code>
+                    &lt link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" &gt
+                </code></li>
+            <li> Next, delete the existing rule you have in your style.css file. It was a good test, but let's not
+                continue with lots of red text.
+            </li>
+            <li> Add the following lines (shown below), replacing the font-family assignment with your font-family
+                selection from What will your website look like?. The property font-family refers to the font(s) you
+                want to use for text. This rule defines a global base font and font size for the whole page. Since &lt
+                html &gt is the parent element of the whole page, all elements inside it inherit the same font-size and
+                font-family.<br><code>html {
+                    font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high */
+                    font-family: "Open Sans", sans-serif; /* this should be the rest of the output you got from Google
+                    fonts */
+                    }</code></li>
+            <li>Note: Anything in CSS between /* and */ is a CSS comment. The browser ignores comments as it renders the
+                code. CSS comments are a way for you to write helpful notes about your code or logic.
+            </li>
+            <li>Now let's set font sizes for elements that will have text inside the HTML body. We'll also center the
+                heading. Finally, let's expand the second ruleset (below) with settings for line height and letter
+                spacing to make body content more readable.
+            </li>
+        </ol>
+        <p>
+            Adjust the px values as you like. Your work-in-progress should look similar to this:
+        </p>
+    </section>
+</main>
+</body>
+</html>
